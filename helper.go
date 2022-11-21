@@ -17,6 +17,18 @@ func ValidateStruct(payload interface{}, payloadMessageError map[string]string) 
 	return
 }
 
+func ValidateStructWithError(payload interface{}, payloadMessageError map[string]string) (errMessage map[string]string, err error) {
+	ge := ShyGinErrors.NewShyGinErrors(payloadMessageError)
+	err = CheckStruct(payload)
+	if err != nil {
+		errMessage = ge.ListAllErrors(payload, err)
+
+		return
+	}
+
+	return
+}
+
 func CheckStruct(payload interface{}) (err error) {
 	v := validator.New()
 
