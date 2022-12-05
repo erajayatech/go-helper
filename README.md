@@ -55,7 +55,7 @@ func main() {
 ```
 
 ```bash
-"Rp Rp 3.000"
+"Rp 3.000"
 ```
 
 ### FormatGender
