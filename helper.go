@@ -1,9 +1,11 @@
 package helper
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
 	"os"
+	"regexp"
 	"strconv"
 	"strings"
 
@@ -155,4 +157,40 @@ func ValidateDateFormat(p string) (result string, err error) {
 		}
 	}
 	return
+}
+
+func ConvertIsoDateFormat(p string) (result string, err error) {
+	result = strings.ReplaceAll(p, "/", "-")
+	d := strings.Split(result, "-")
+	if len(d) != 3 {
+		err = errors.New("use format dd-mm-yyyy or dd-mm-yyyy")
+	}
+
+	result = d[2] + "-" + d[1] + "-" + d[0]
+	return
+}
+
+func SanitizeSpecialChar(word string) string {
+	space := regexp.MustCompile(`\s+`)
+	re := strings.NewReplacer("/n", " ", "\n", " ")
+
+	return space.ReplaceAllString(strings.TrimSpace(re.Replace(word)), " ")
+}
+
+func ContainsSliceString(s []string, str string) bool {
+	for _, v := range s {
+		if v == str {
+			return true
+		}
+	}
+
+	return false
+}
+
+func CreateKeyValuePairs(m map[string]string) string {
+	b := new(bytes.Buffer)
+	for key, value := range m {
+		fmt.Fprintf(b, "%s=\"%s\"\n", key, value)
+	}
+	return b.String()
 }

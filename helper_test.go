@@ -1,6 +1,7 @@
 package helper
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 )
@@ -393,6 +394,149 @@ func TestValidateDateFormat(t *testing.T) {
 			}
 			if gotResult != tt.wantResult {
 				t.Errorf("ValidateDateFormat() = %v, want %v", gotResult, tt.wantResult)
+			}
+		})
+	}
+}
+
+func TestConvertIsoDateFormat(t *testing.T) {
+	type args struct {
+		p string
+	}
+	tests := []struct {
+		name       string
+		args       args
+		wantResult string
+		wantErr    bool
+	}{
+		// TODO: Add test cases.
+		{
+			name: "first test convert iso date format",
+			args: args{
+				p: "2022/07/10",
+			},
+			wantResult: "10-07-2022",
+			wantErr:    false,
+		},
+		{
+			name: "second test convert iso date format",
+			args: args{
+				p: "10/07/2022",
+			},
+			wantResult: "2022-07-10",
+			wantErr:    false,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			gotResult, err := ConvertIsoDateFormat(tt.args.p)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("ConvertIsoDateFormat() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if gotResult != tt.wantResult {
+				t.Errorf("ConvertIsoDateFormat() = %v, want %v", gotResult, tt.wantResult)
+			}
+		})
+	}
+}
+
+func TestSanitizeSpecialChar(t *testing.T) {
+	type args struct {
+		word string
+	}
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		// TODO: Add test cases.
+		{
+			name: "first test sanitize special char",
+			args: args{
+				word: "jalan\nnamajalan\n",
+			},
+			want: "jalan namajalan",
+		},
+		{
+			name: "second test sanitize special char",
+			args: args{
+				word: "jalan/n\nnamajalan\n",
+			},
+			want: "jalan namajalan",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := SanitizeSpecialChar(tt.args.word); got != tt.want {
+				t.Errorf("SanitizeSpecialChar() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestContainsSliceString(t *testing.T) {
+	type args struct {
+		s   []string
+		str string
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		// TODO: Add test cases.
+		{
+			name: "first test contains slice string",
+			args: args{
+				s:   []string{"abc", "def"},
+				str: "def",
+			},
+			want: true,
+		},
+		{
+			name: "second test contains slice string",
+			args: args{
+				s:   []string{"abc", "def"},
+				str: "ghi",
+			},
+			want: false,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := ContainsSliceString(tt.args.s, tt.args.str); got != tt.want {
+				t.Errorf("ContainsSliceString() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestCreateKeyValuePairs(t *testing.T) {
+	type args struct {
+		m map[string]string
+	}
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		// TODO: Add test cases.
+		{
+			name: "first test create key value pairs",
+			args: args{
+				m: map[string]string{
+					"name":  "name is required",
+					"email": "email is required",
+				},
+			},
+			want: fmt.Sprintf("%s\n%s\n", `name="name is required"`, `email="email is required"`),
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := CreateKeyValuePairs(tt.args.m); got != tt.want {
+				t.Errorf("CreateKeyValuePairs() = %v, want %v", got, tt.want)
 			}
 		})
 	}

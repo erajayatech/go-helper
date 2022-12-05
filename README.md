@@ -9,7 +9,7 @@ go get github.com/erajayatech/go-helper
 
 ## Usage
 
-### Validation Struct
+### ValidateStruct
 ```go
 import "github.com/erajayatech/go-helper"
 
@@ -43,7 +43,7 @@ func main() {
 }
 ```
 
-### Format Rupiah
+### FormatRupiah
 ```go
 import "github.com/erajayatech/go-helper"
 
@@ -58,7 +58,7 @@ func main() {
 "Rp Rp 3.000"
 ```
 
-### Format Gender
+### FormatGender
 ```go
 import "github.com/erajayatech/go-helper"
 
@@ -73,7 +73,7 @@ func main() {
 "M"
 ```
 
-### Must Get Env
+### MustGetEnv
 ```go
 import "github.com/erajayatech/go-helper"
 
@@ -88,7 +88,7 @@ func main() {
 "local"
 ```
 
-### Format Info Text
+### FormatInfoText
 ```go
 import "github.com/erajayatech/go-helper"
 
@@ -103,7 +103,7 @@ func main() {
 "update data #11000034 processing - updated_by: system"
 ```
 
-### Expected Int
+### ExpectedInt
 ```go
 import "github.com/erajayatech/go-helper"
 
@@ -118,7 +118,7 @@ func main() {
 6
 ```
 
-### Expected Int64
+### ExpectedInt64
 ```go
 import "github.com/erajayatech/go-helper"
 
@@ -135,7 +135,7 @@ func main() {
 67
 ```
 
-### Expected String
+### ExpectedString
 ```go
 import "github.com/erajayatech/go-helper"
 
@@ -150,7 +150,7 @@ func main() {
 "67"
 ```
 
-### Float To String
+### FloatToString
 ```go
 import "github.com/erajayatech/go-helper"
 
@@ -165,7 +165,7 @@ func main() {
 "0.060000"
 ```
 
-### Validate Date Format
+### ValidateDateFormat
 ```go
 import "github.com/erajayatech/go-helper"
 
@@ -180,6 +180,71 @@ func main() {
 "01-09-2010"
 ```
 
+### ConvertIsoDateFormat
+```go
+import "github.com/erajayatech/go-helper"
+
+func main() {
+	date, err := helper.ConvertIsoDateFormat("2022/07/10")
+
+	fmt.Println(date)
+}
+```
+
+```bash
+"10-07-2022"
+```
+
+### SanitizeSpecialChar
+```go
+import "github.com/erajayatech/go-helper"
+
+func main() {
+	data, err := helper.SanitizeSpecialChar("jalan\nnamajalan\n")
+
+	fmt.Println(data)
+}
+```
+
+```bash
+"jalan namajalan"
+```
+
+### ContainsSliceString
+```go
+import "github.com/erajayatech/go-helper"
+
+func main() {
+	array := []string{"abc", "def"}
+	data, err := helper.ContainsSliceString(array,"def")
+
+	fmt.Println(data)
+}
+```
+
+```bash
+true
+```
+
+### CreateKeyValuePairs
+```go
+import "github.com/erajayatech/go-helper"
+
+func main() {
+	array := map[string]string{
+				"name":  "name is required",
+				"email": "email is required",
+			}
+	data, err := helper.CreateKeyValuePairs(array)
+
+	fmt.Println(data)
+}
+```
+
+```bash
+name="name is required"
+email="email is required"
+```
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
