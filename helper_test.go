@@ -541,3 +541,51 @@ func TestCreateKeyValuePairs(t *testing.T) {
 		})
 	}
 }
+
+func TestIsSourceJdsport(t *testing.T) {
+	type args struct {
+		source string
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		// TODO: Add test cases.
+		{
+			name: "first test check source is jdsport",
+			args: args{
+				source: "jdsport-mkg-k1",
+			},
+			want: true,
+		},
+		{
+			name: "second test check source is jdsport",
+			args: args{
+				source: "jdsport",
+			},
+			want: true,
+		},
+		{
+			name: "third test check source is jdsport",
+			args: args{
+				source: "eraspace",
+			},
+			want: false,
+		},
+		{
+			name: "fourth test check source is jdsport",
+			args: args{
+				source: "",
+			},
+			want: false,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := IsSourceJdsport(tt.args.source); got != tt.want {
+				t.Errorf("IsSourceJdsport() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
