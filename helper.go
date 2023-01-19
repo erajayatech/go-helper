@@ -10,6 +10,7 @@ import (
 	"strings"
 
 	"github.com/dustin/go-humanize"
+	"github.com/erajayatech/go-helper/constants"
 	"github.com/go-playground/validator/v10"
 	"github.com/joho/godotenv"
 	"github.com/labstack/gommon/log"
@@ -193,4 +194,22 @@ func CreateKeyValuePairs(m map[string]string) string {
 		fmt.Fprintf(b, "%s=\"%s\"\n", key, value)
 	}
 	return b.String()
+}
+
+func IsSourceJdsport(source string) bool {
+	switch source {
+	case
+		constants.XSource_JDSport,
+		constants.XSource_JDSport_Mkg_k1,
+		constants.XSource_JDSport_Lmp_k1,
+		constants.XSource_JDSport_Pim_k1,
+		constants.XSource_JDSport_Snc_k1,
+		constants.XSource_JDSport_Ctp_k1,
+		constants.XSource_JDSport_Sms_k1,
+		constants.XSource_JDSport_Lmk_k1,
+		constants.XSource_JDSport_Pim_k2:
+		return true
+	}
+
+	return false
 }
