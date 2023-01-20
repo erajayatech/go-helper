@@ -244,6 +244,34 @@ func main() {
 ```bash
 name="name is required"
 email="email is required"
+
+### IsSourceJdsport
+```go
+import "github.com/erajayatech/go-helper"
+
+func main() {
+	value := helper.IsSourceJdsport("jdsport")
+
+	fmt.Println(value)
+}
+```
+
+```bash
+true
+
+### IsSourcePaymentLink
+```go
+import "github.com/erajayatech/go-helper"
+
+func main() {
+	value := helper.IsSourcePaymentLink("telemarketing")
+
+	fmt.Println(value)
+}
+```
+
+```bash
+true
 ```
 
 ## License
