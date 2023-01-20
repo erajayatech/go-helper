@@ -213,3 +213,22 @@ func IsSourceJdsport(source string) bool {
 
 	return false
 }
+
+func IsSourcePaymentLink(source string) bool {
+	switch source {
+	case
+		constants.XSource_JDSport_Mkg_k1,
+		constants.XSource_JDSport_Lmp_k1,
+		constants.XSource_JDSport_Pim_k1,
+		constants.XSource_JDSport_Snc_k1,
+		constants.XSource_JDSport_Ctp_k1,
+		constants.XSource_JDSport_Sms_k1,
+		constants.XSource_JDSport_Lmk_k1,
+		constants.XSource_JDSport_Pim_k2,
+		constants.XSource_Telemarketing,
+		constants.XSource_ReverseO2O:
+		return true
+	}
+
+	return false
+}

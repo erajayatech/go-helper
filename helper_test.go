@@ -589,3 +589,51 @@ func TestIsSourceJdsport(t *testing.T) {
 		})
 	}
 }
+
+func TestIsSourcePaymentLink(t *testing.T) {
+	type args struct {
+		source string
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		// TODO: Add test cases.
+		{
+			name: "first test check source is payment link",
+			args: args{
+				source: "jdsport-mkg-k1",
+			},
+			want: true,
+		},
+		{
+			name: "second test check source is payment link",
+			args: args{
+				source: "telemarketing",
+			},
+			want: true,
+		},
+		{
+			name: "third test check source is payment link",
+			args: args{
+				source: "eraspace",
+			},
+			want: false,
+		},
+		{
+			name: "fourth test check source is payment link",
+			args: args{
+				source: "",
+			},
+			want: false,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := IsSourcePaymentLink(tt.args.source); got != tt.want {
+				t.Errorf("IsSourcePaymentLink() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
