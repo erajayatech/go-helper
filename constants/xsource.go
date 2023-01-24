@@ -18,5 +18,11 @@ const (
 	XSource_JDSport_Ctp_k1 = "jdsport-ctp-k1"
 	XSource_JDSport_Sms_k1 = "jdsport-sms-k1"
 	XSource_JDSport_Lmk_k1 = "jdsport-lmk-k1"
+	XSource_JDSport_Mkg_k2 = "jdsport-mkg-k2"
+	XSource_JDSport_Lmp_k2 = "jdsport-lmp-k2"
 	XSource_JDSport_Pim_k2 = "jdsport-pim-k2"
+	XSource_JDSport_Snc_k2 = "jdsport-snc-k2"
+	XSource_JDSport_Ctp_k2 = "jdsport-ctp-k2"
+	XSource_JDSport_Sms_k2 = "jdsport-sms-k2"
+	XSource_JDSport_Lmk_k2 = "jdsport-lmk-k2"
 )
