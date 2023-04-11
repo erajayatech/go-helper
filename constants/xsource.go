@@ -27,4 +27,5 @@ const (
 	XSource_JDSport_Lmk_k2 = "jdsport-lmk-k2"
 	XSource_JDSport_Smb_k1 = "jdsport-smb-k1"
 	XSource_JDSport_Smb_k2 = "jdsport-smb-k2"
+	XSource_Enterprise     = "enterprise"
 )
