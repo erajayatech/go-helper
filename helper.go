@@ -196,33 +196,7 @@ func CreateKeyValuePairs(m map[string]string) string {
 	return b.String()
 }
 
-func IsSourceJdsport(source string) bool {
-	switch source {
-	case
-		constants.XSource_JDSport,
-		constants.XSource_JDSport_Mkg_k1,
-		constants.XSource_JDSport_Lmp_k1,
-		constants.XSource_JDSport_Pim_k1,
-		constants.XSource_JDSport_Snc_k1,
-		constants.XSource_JDSport_Ctp_k1,
-		constants.XSource_JDSport_Sms_k1,
-		constants.XSource_JDSport_Lmk_k1,
-		constants.XSource_JDSport_Mkg_k2,
-		constants.XSource_JDSport_Lmp_k2,
-		constants.XSource_JDSport_Pim_k2,
-		constants.XSource_JDSport_Snc_k2,
-		constants.XSource_JDSport_Ctp_k2,
-		constants.XSource_JDSport_Sms_k2,
-		constants.XSource_JDSport_Lmk_k2,
-		constants.XSource_JDSport_Smb_k1,
-		constants.XSource_JDSport_Smb_k2:
-		return true
-	}
-
-	return false
-}
-
-func IsSourcePaymentLink(source string) bool {
+func IsSourceJdsportKiosk(source string) bool {
 	switch source {
 	case
 		constants.XSource_JDSport_Mkg_k1,
@@ -241,6 +215,29 @@ func IsSourcePaymentLink(source string) bool {
 		constants.XSource_JDSport_Lmk_k2,
 		constants.XSource_JDSport_Smb_k1,
 		constants.XSource_JDSport_Smb_k2,
+		constants.XSource_JDSport_Spm_k1,
+		constants.XSource_JDSport_Spm_k2:
+		return true
+	}
+
+	return false
+}
+
+func IsSourceJdsport(source string) bool {
+	if source == constants.XSource_JDSport || IsSourceJdsportKiosk(source) {
+		return true
+	}
+
+	return false
+}
+
+func IsSourcePaymentLink(source string) bool {
+	if IsSourceJdsportKiosk(source) {
+		return true
+	}
+
+	switch source {
+	case
 		constants.XSource_Telemarketing,
 		constants.XSource_ReverseO2O:
 		return true

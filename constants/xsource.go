@@ -1,15 +1,20 @@
 package constants
 
 const (
-	XSourceRepair          = "REPAIR"
-	XSource_Eraspace       = "eraspace"
-	XSource_IBox           = "ibox"
-	XSource_Repair         = "repair"
-	XSource_TheFaceShop    = "tfs"
-	XSource_Telemarketing  = "telemarketing"
-	XSource_ImmersiveTech  = "it"
-	XSource_ReverseO2O     = "reverseo2o"
-	XSource_Erafonenmore   = "erafonenmore"
+	XSourceRepair         = "REPAIR"
+	XSource_Eraspace      = "eraspace"
+	XSource_IBox          = "ibox"
+	XSource_Repair        = "repair"
+	XSource_TheFaceShop   = "tfs"
+	XSource_Telemarketing = "telemarketing"
+	XSource_ImmersiveTech = "it"
+	XSource_ReverseO2O    = "reverseo2o"
+	XSource_Erafonenmore  = "erafonenmore"
+	XSource_Enterprise    = "enterprise"
+)
+
+// source jdsports
+const (
 	XSource_JDSport        = "jdsport"
 	XSource_JDSport_Mkg_k1 = "jdsport-mkg-k1"
 	XSource_JDSport_Lmp_k1 = "jdsport-lmp-k1"
@@ -27,5 +32,6 @@ const (
 	XSource_JDSport_Lmk_k2 = "jdsport-lmk-k2"
 	XSource_JDSport_Smb_k1 = "jdsport-smb-k1"
 	XSource_JDSport_Smb_k2 = "jdsport-smb-k2"
-	XSource_Enterprise     = "enterprise"
+	XSource_JDSport_Spm_k1 = "jdsport-spm-k1"
+	XSource_JDSport_Spm_k2 = "jdsport-spm-k2"
 )
