@@ -245,3 +245,26 @@ func IsSourcePaymentLink(source string) bool {
 
 	return false
 }
+
+func IsValidSource(source string) bool {
+	if IsSourceJdsport(source) {
+		return true
+	}
+
+	switch source {
+	case
+		constants.XSourceRepair,
+		constants.XSource_Eraspace,
+		constants.XSource_IBox,
+		constants.XSource_Repair,
+		constants.XSource_TheFaceShop,
+		constants.XSource_Telemarketing,
+		constants.XSource_ImmersiveTech,
+		constants.XSource_ReverseO2O,
+		constants.XSource_Erafonenmore,
+		constants.XSource_Enterprise:
+		return true
+	}
+
+	return false
+}
