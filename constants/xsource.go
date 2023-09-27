@@ -34,4 +34,8 @@ const (
 	XSource_JDSport_Smb_k2 = "jdsport-smb-k2"
 	XSource_JDSport_Spm_k1 = "jdsport-spm-k1"
 	XSource_JDSport_Spm_k2 = "jdsport-spm-k2"
+	XSource_JDSport_Pms_k1 = "jdsport-pms-k1"
+	XSource_JDSport_Pms_k2 = "jdsport-pms-k2"
+	XSource_JDSport_Tps_k1 = "jdsport-tps-k1"
+	XSource_JDSport_Tps_k2 = "jdsport-tps-k2"
 )
