@@ -17,6 +17,7 @@ const (
 // source jdsports
 const (
 	XSource_JDSport        = "jdsport"
+	XSource_JDSport_Kiosk  = "jdsport-kiosk"
 	XSource_JDSport_Mkg_k1 = "jdsport-mkg-k1"
 	XSource_JDSport_Lmp_k1 = "jdsport-lmp-k1"
 	XSource_JDSport_Pim_k1 = "jdsport-pim-k1"
@@ -39,4 +40,6 @@ const (
 	XSource_JDSport_Pms_k2 = "jdsport-pms-k2"
 	XSource_JDSport_Tps_k1 = "jdsport-tps-k1"
 	XSource_JDSport_Tps_k2 = "jdsport-tps-k2"
+	XSource_JDSport_Smd_k1 = "jdsport-smd-k1"
+	XSource_JDSport_Smd_t1 = "jdsport-smd-t1"
 )

@@ -220,7 +220,9 @@ func IsSourceJdsportKiosk(source string) bool {
 		constants.XSource_JDSport_Pms_k1,
 		constants.XSource_JDSport_Pms_k2,
 		constants.XSource_JDSport_Tps_k1,
-		constants.XSource_JDSport_Tps_k2:
+		constants.XSource_JDSport_Tps_k2,
+		constants.XSource_JDSport_Smd_k1,
+		constants.XSource_JDSport_Smd_t1:
 		return true
 	}
 
