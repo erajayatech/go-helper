@@ -41,5 +41,5 @@ const (
 	XSource_JDSport_Tps_k1 = "jdsport-tps-k1"
 	XSource_JDSport_Tps_k2 = "jdsport-tps-k2"
 	XSource_JDSport_Smd_k1 = "jdsport-smd-k1"
-	XSource_JDSport_Smd_t1 = "jdsport-smd-t1"
+	XSource_JDSport_Smd_k2 = "jdsport-smd-k2"
 )
