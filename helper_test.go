@@ -657,7 +657,14 @@ func TestSourceToStoreCodeCCM(t *testing.T) {
 			wantStoreCode: "en",
 		},
 		{
-			name: "source except enterprise should return itself",
+			name: "source telemarketing should return eraspace",
+			args: args{
+				source: constants.XSource_Telemarketing,
+			},
+			wantStoreCode: constants.XSource_Eraspace,
+		},
+		{
+			name: "other source should return itself",
 			args: args{
 				source: constants.XSource_Eraspace,
 			},
