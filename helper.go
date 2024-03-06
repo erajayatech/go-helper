@@ -280,5 +280,8 @@ func SourceToStoreCodeCCM(source string) (storeCode string) {
 	if source == constants.XSource_Enterprise {
 		return "en"
 	}
+	if source == constants.XSource_Telemarketing {
+		return constants.XSource_Eraspace
+	}
 	return source
 }
