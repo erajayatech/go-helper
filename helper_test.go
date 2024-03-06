@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"reflect"
 	"testing"
+
+	"github.com/erajayatech/go-helper/constants"
 )
 
 func TestValidateStruct(t *testing.T) {
@@ -633,6 +635,39 @@ func TestIsSourcePaymentLink(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := IsSourcePaymentLink(tt.args.source); got != tt.want {
 				t.Errorf("IsSourcePaymentLink() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestSourceToStoreCodeCCM(t *testing.T) {
+	type args struct {
+		source string
+	}
+	tests := []struct {
+		name          string
+		args          args
+		wantStoreCode string
+	}{
+		{
+			name: "source enterprise should return en",
+			args: args{
+				source: constants.XSource_Enterprise,
+			},
+			wantStoreCode: "en",
+		},
+		{
+			name: "source except enterprise should return itself",
+			args: args{
+				source: constants.XSource_Eraspace,
+			},
+			wantStoreCode: constants.XSource_Eraspace,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if gotStoreCode := SourceToStoreCodeCCM(tt.args.source); gotStoreCode != tt.wantStoreCode {
+				t.Errorf("SourceToStoreCodeCCM() = %v, want %v", gotStoreCode, tt.wantStoreCode)
 			}
 		})
 	}

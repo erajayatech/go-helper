@@ -275,3 +275,10 @@ func IsValidSource(source string) bool {
 
 	return false
 }
+
+func SourceToStoreCodeCCM(source string) (storeCode string) {
+	if source == constants.XSource_Enterprise {
+		return "en"
+	}
+	return source
+}
