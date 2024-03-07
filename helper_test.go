@@ -664,6 +664,13 @@ func TestSourceToStoreCodeCCM(t *testing.T) {
 			wantStoreCode: constants.XSource_Eraspace,
 		},
 		{
+			name: "source empty should return eraspace",
+			args: args{
+				source: "",
+			},
+			wantStoreCode: constants.XSource_Eraspace,
+		},
+		{
 			name: "other source should return itself",
 			args: args{
 				source: constants.XSource_Eraspace,
