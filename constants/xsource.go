@@ -42,4 +42,8 @@ const (
 	XSource_JDSport_Tps_k2 = "jdsport-tps-k2"
 	XSource_JDSport_Smd_k1 = "jdsport-smd-k1"
 	XSource_JDSport_Smd_k2 = "jdsport-smd-k2"
+	XSource_JDSport_Tmm_k1 = "jdsport-tmm-k1"
+	XSource_JDSport_Tmm_k2 = "jdsport-tmm-k2"
+	XSource_JDSport_Hos_k1 = "jdsport-hos-k1"
+	XSource_JDSport_Hos_k2 = "jdsport-hos-k2"
 )
