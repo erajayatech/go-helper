@@ -199,6 +199,7 @@ func CreateKeyValuePairs(m map[string]string) string {
 func IsSourceJdsportKiosk(source string) bool {
 	switch source {
 	case
+		constants.XSource_JDSport_Kiosk,
 		constants.XSource_JDSport_Mkg_k1,
 		constants.XSource_JDSport_Lmp_k1,
 		constants.XSource_JDSport_Pim_k1,
