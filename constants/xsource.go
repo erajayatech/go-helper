@@ -11,6 +11,7 @@ const (
 	XSource_ReverseO2O    = "reverseo2o"
 	XSource_Erafonenmore  = "erafonenmore"
 	XSource_Enterprise    = "enterprise"
+	XSource_IboxEdu       = "ibox-edu"
 	XSource_UrbanRepublic = "ur"
 )
 
