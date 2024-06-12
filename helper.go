@@ -283,14 +283,16 @@ func IsValidSource(source string) bool {
 }
 
 func SourceToStoreCodeCCM(source string) (storeCode string) {
-	if source == constants.XSource_Enterprise {
+	switch source {
+	case constants.XSource_Enterprise:
 		return "en"
-	}
-	if source == constants.XSource_Telemarketing {
+	case
+		"",
+		constants.XSource_Telemarketing,
+		constants.XSource_ReverseO2O,
+		constants.XSource_Erafonenmore:
 		return constants.XSource_Eraspace
 	}
-	if source == "" {
-		return constants.XSource_Eraspace
-	}
+
 	return source
 }
