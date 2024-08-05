@@ -12,6 +12,7 @@ const (
 	XSource_Erafonenmore  = "erafonenmore"
 	XSource_Enterprise    = "enterprise"
 	XSource_IboxEdu       = "ibox-edu"
+	XSource_IboxEnt       = "ibox-ent"
 	XSource_UrbanRepublic = "ur"
 )
 

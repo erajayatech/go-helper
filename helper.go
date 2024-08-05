@@ -275,6 +275,7 @@ func IsValidSource(source string) bool {
 		constants.XSource_Erafonenmore,
 		constants.XSource_Enterprise,
 		constants.XSource_IboxEdu,
+		constants.XSource_IboxEnt,
 		constants.XSource_UrbanRepublic:
 		return true
 	}
