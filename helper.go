@@ -199,35 +199,7 @@ func CreateKeyValuePairs(m map[string]string) string {
 func IsSourceJdsportKiosk(source string) bool {
 	switch source {
 	case
-		constants.XSource_JDSport_Kiosk,
-		constants.XSource_JDSport_Mkg_k1,
-		constants.XSource_JDSport_Lmp_k1,
-		constants.XSource_JDSport_Pim_k1,
-		constants.XSource_JDSport_Snc_k1,
-		constants.XSource_JDSport_Ctp_k1,
-		constants.XSource_JDSport_Sms_k1,
-		constants.XSource_JDSport_Lmk_k1,
-		constants.XSource_JDSport_Mkg_k2,
-		constants.XSource_JDSport_Lmp_k2,
-		constants.XSource_JDSport_Pim_k2,
-		constants.XSource_JDSport_Snc_k2,
-		constants.XSource_JDSport_Ctp_k2,
-		constants.XSource_JDSport_Sms_k2,
-		constants.XSource_JDSport_Lmk_k2,
-		constants.XSource_JDSport_Smb_k1,
-		constants.XSource_JDSport_Smb_k2,
-		constants.XSource_JDSport_Spm_k1,
-		constants.XSource_JDSport_Spm_k2,
-		constants.XSource_JDSport_Pms_k1,
-		constants.XSource_JDSport_Pms_k2,
-		constants.XSource_JDSport_Tps_k1,
-		constants.XSource_JDSport_Tps_k2,
-		constants.XSource_JDSport_Smd_k1,
-		constants.XSource_JDSport_Smd_k2,
-		constants.XSource_JDSport_Tmm_k1,
-		constants.XSource_JDSport_Tmm_k2,
-		constants.XSource_JDSport_Hos_k1,
-		constants.XSource_JDSport_Hos_k2:
+		constants.XSource_JDSport_Kiosk:
 		return true
 	}
 
@@ -276,7 +248,9 @@ func IsValidSource(source string) bool {
 		constants.XSource_Enterprise,
 		constants.XSource_IboxEdu,
 		constants.XSource_IboxEnt,
-		constants.XSource_UrbanRepublic:
+		constants.XSource_UrbanRepublic,
+		constants.XSource_Erafone,
+		constants.XSource_EraspaceLivin:
 		return true
 	}
 
